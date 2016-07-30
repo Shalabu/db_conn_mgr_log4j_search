@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseServers>
+	<engines>
+
+		<engine name="My_Sql" priority="1">
+			<user>root</user>
+			<password>root</password>
+			<port>3306</port>
+			<host>localhost</host>
+			<instance></instance>
+			<schema></schema>
+		</engine>
+
+		<engine name="ORACLE_THIN" priority="2">
+			<user></user>
+			<password></password>
+			<port></port>
+			<host></host>
+			<instance></instance>
+			<schema></schema>
+		</engine>
+
+	</engines>
+</databaseServers>

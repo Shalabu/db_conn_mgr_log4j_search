@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration level="info" packages="logging">
+
+	<Appenders>
+
+		<DataToFileAppender name="abc">
+			<PatternLayout pattern="%d{yyyy/MM/dd HH:mm:ss} %m%n" />
+			<ImmediateFlush>true</ImmediateFlush>
+		</DataToFileAppender>
+	</Appenders>
+	<Loggers>
+		<Root level="all" additivity="false">
+			<AppenderRef ref="abc" />
+
+		</Root>
+	</Loggers>
+
+</Configuration>
