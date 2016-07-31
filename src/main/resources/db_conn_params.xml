@@ -3,22 +3,26 @@
 <databaseServers>
 	<engines>
 
-		<engine name="My_Sql" priority="1">
+		<engine name="MYSQL" priority="1">
 			<user>root</user>
 			<password>root</password>
 			<port>3306</port>
 			<host>localhost</host>
-			<instance></instance>
-			<schema></schema>
+			<instance>dbuser</instance>
+			<schema>dbuser</schema>
+			<drivertype></drivertype>
+			<protocol>tcp</protocol>
 		</engine>
 
 		<engine name="ORACLE_THIN" priority="2">
-			<user></user>
-			<password></password>
-			<port></port>
-			<host></host>
-			<instance></instance>
-			<schema></schema>
+			<user>MFC</user>
+			<password>MFC</password>
+			<port>1521</port>
+			<host>localhost</host>
+			<instance>xe</instance>
+			<schema>Practice</schema>
+			<drivertype>thin</drivertype>
+			<protocol>tcp</protocol>
 		</engine>
 
 	</engines>

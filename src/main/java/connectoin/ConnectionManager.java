@@ -19,10 +19,7 @@ import connectoin.params.DatabaseServers.Engines.Engine;
 
 public class ConnectionManager {
 
-	// configuration file to hold database parameters
-	private final static String FILE_PATH = "/db_conn_params.xml";
 
-	// data sources for pooling
 	ConnectionPoolDataSource pooledDataSource = null;
 	PooledConnection pooledConnection = null;
 
@@ -37,6 +34,8 @@ public class ConnectionManager {
 		String schema = dbEngine.getSchema();
 		int port = Integer.valueOf(dbEngine.getPort());
 		String instance = dbEngine.getInstance();
+		String protocol = dbEngine.getProtocol();
+		String driverType = dbEngine.getDrivertype();
 
 		switch (engineType) {
 		case "ORACLE_THIN":
@@ -44,11 +43,13 @@ public class ConnectionManager {
 			try {
 				pooledDataSource = new OracleConnectionPoolDataSource();
 				((OracleConnectionPoolDataSource) pooledDataSource)
-						.setDriverType(engineType);
+						.setDriverType(driverType);
+				((OracleConnectionPoolDataSource) pooledDataSource)
+						.setNetworkProtocol(protocol);
 				((OracleConnectionPoolDataSource) pooledDataSource)
 						.setServerName(host);
 				((OracleConnectionPoolDataSource) pooledDataSource)
-						.setDatabaseName(instance);
+						.setServiceName(instance);
 				((OracleConnectionPoolDataSource) pooledDataSource)
 						.setPortNumber(port);
 				((OracleConnectionPoolDataSource) pooledDataSource)
@@ -80,8 +81,6 @@ public class ConnectionManager {
 						.setUser(userName);
 				((MysqlConnectionPoolDataSource) pooledDataSource)
 						.setPassword(password);
-				((MysqlConnectionPoolDataSource) pooledDataSource)
-						.setDatabaseName(schema);
 
 				pooledConnection = pooledDataSource.getPooledConnection();
 			} catch (SQLException e) {
