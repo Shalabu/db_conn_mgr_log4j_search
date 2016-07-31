@@ -10,8 +10,11 @@ The project is comprised of two parts
 2 - The second part is Log4j utility with custom appender and full text search capability at logging, search, and util packages.
  	- The custom Appender class DataAppender is designed to append logs to file at "logMe/default.log".
  	- The DemoLogger class is designed to demonstrate the functionality of the custom appender.
- 	- There's is a full text search functionality, located at search package, two classes implement the search functionality; Match and Matcher. The Matcher returns a list of Matches with line and colomn occurrences. 
+ 	- There's is a full text search functionality, located at search package, two classes implement the search functionality; Match and Matcher. The Matcher returns a list of Matches with line and colomn occurrences.
  	
+ 	
+----------------------------------------------- 	
+ 	idea * the project is designed to parse xml configuration file which contains databases servers configurations and build connection pools for each type and rely on the master database connection based on a "priority" attribute. The project as well provides a log4j custom appender to write log events in file, and exposes a full text search utility within the generated logs. 
 ------------------------------------------
 
 ** USED TECHNOLOGIES **
@@ -23,6 +26,18 @@ JDBC --> database connectivity
 GIT --> project version control and change tracking
 
 ------------------------------------------
+
+Configuration and testing
+-------------------------------------
+Configurations
+--------------
+Adjust the configuration xml file at resources db_conn_params.xml to match your database environment, in this version the project is designed to work on Oracle and MySql databases.
+
+ 
+Testing
+---------
+You may run the test classes under src/test/java. But make sure to empty the log file. 
+
 
 ** PROS AND CONS **
 - Searching :
