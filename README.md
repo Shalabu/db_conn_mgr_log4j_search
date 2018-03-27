@@ -1,5 +1,4 @@
 # log4j_search_and_db_con_mgr
-Zentity software development test solution
 ------------------------------------------
 The project is comprised of two parts
 1 - The first part is database connection manager with connection pool and failover access at connection package -> ConnectionManager class.
@@ -49,9 +48,9 @@ You may run the test classes under src/test/java. But make sure to empty the log
 	
 ** UNDER DEVELOPMENT **
 - Implementing failover access to database 
-– If one database dies the ConnectionManager should automatically switch to 
+â€“ If one database dies the ConnectionManager should automatically switch to 
 second database server 
-– During failover mode checks if master DB server is again ready to use and 
+â€“ During failover mode checks if master DB server is again ready to use and 
 establish all new connections to master DB server afterwards 
 
 	
